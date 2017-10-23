@@ -7,3 +7,5 @@ export { default as Text } from 'react-native-web/dist/components/Text'
 export { default as TouchableWithoutFeedback } from 'react-native-web/dist/components/Touchable/TouchableWithoutFeedback'
 export { default as TouchableHighlight } from 'react-native-web/dist/components/Touchable/TouchableHighlight'
 export { default as TouchableOpacity } from 'react-native-web/dist/components/Touchable/TouchableOpacity'
+
+export { Platform } from 'react-native-web'

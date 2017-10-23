@@ -4,9 +4,12 @@ export {
   Text,
   TextInput,
   View,
-  
+
   // Touable
   TouchableHighlight, 
   TouchableOpacity, 
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+
+  // API
+  Platform
 } from 'react-native'

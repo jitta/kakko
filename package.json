@@ -26,6 +26,7 @@
     "prop-types": "^15.6.0",
     "react-dom": "^16.0.0",
     "react-native-storybook-loader": "^1.6.0",
+    "react-native-syntax-highlighter": "^1.2.5",
     "react-test-renderer": "16.0.0-beta.5"
   },
   "jest": {

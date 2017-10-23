@@ -10,8 +10,9 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      '@storybook/react-native': '@storybook/react'
+      '@storybook/react-native': '@storybook/react',
+      'react-native-syntax-highlighter': 'react-syntax-highlighter'
     }
   },
-  devtool: '#eval-source-map'
+  devtool: 'cheap-module-source-map'
 }
