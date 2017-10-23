@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 import Page from '../Page'
 
-import { Button, Image, Text, TextInput, View } from 'kakko/base'
+import { Button, Image, Text, TextInput, View } from 'react-native'
 
 const code = `
 import { 
@@ -42,6 +42,11 @@ storiesOf('Base', module).add('View', () => (
       <Image
         style={{ width: 200, height: 200 }}
         source={{ uri: 'https://octodex.github.com/images/catstello.png' }}
+      />
+      <TextInput
+        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        onChangeText={(text) => this.setState({text})}
+        value={"Value"}
       />
     </View>
   </Page>

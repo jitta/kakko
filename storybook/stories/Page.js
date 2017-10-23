@@ -1,7 +1,7 @@
 import React from 'react'
 
 import SyntaxHighlighter from 'react-native-syntax-highlighter';
-import { atomOneDark } from 'react-syntax-highlighter/dist/styles';
+import { github } from 'react-syntax-highlighter/dist/styles';
 
 import { View, Text, Platform, ScrollView } from 'kakko/base'
 
@@ -11,7 +11,7 @@ export default class Page extends React.Component {
     let info = null
     const Container = (Platform.OS === 'web') ? View : ScrollView
     if (this.props.code) {
-      code = <SyntaxHighlighter language='shell' style={atomOneDark} customStyle={{ padding: 20 }}>{this.props.code.trim()}</SyntaxHighlighter>
+      code = <SyntaxHighlighter language='javascript' style={github} customStyle={{ padding: 20 }}>{this.props.code.trim()}</SyntaxHighlighter>
     }
 
     if (this.props.info) {

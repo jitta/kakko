@@ -12,5 +12,9 @@ export {
   TouchableWithoutFeedback,
 
   // API
-  Platform
+  Platform,
+  StyleSheet,
+  Dimensions,
+  PanResponder,
+  Animated
 } from 'react-native'
