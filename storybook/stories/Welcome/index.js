@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View, Text } from '../../../src/base';
 
 export default class Welcome extends React.Component {
   styles = {

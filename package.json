@@ -7,12 +7,13 @@
     "test": "jest",
     "storybook:web": "start-storybook -p 9001 -c storybook",
     "storybook:native": "storybook start -p 7007",
-    "prestorybook:native": "rnstl",
-    "prestorybook:web": "rnstl"
+    "prestorybook:native": "rnstl --pattern=storybook/stories/*.stories.js",
+    "prestorybook:web": "rnstl --pattern=storybook/stories/*.stories.js"
   },
   "dependencies": {
     "react": "^16.0.0",
-    "react-native": "0.49.3"
+    "react-native": "0.49.3",
+    "react-native-web": "^0.1.12"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.13",
