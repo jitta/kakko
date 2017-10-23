@@ -4,6 +4,7 @@ export {
   Text,
   TextInput,
   View,
+  ScrollView,
 
   // Touable
   TouchableHighlight, 

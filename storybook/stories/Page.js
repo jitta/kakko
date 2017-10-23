@@ -3,24 +3,27 @@ import React from 'react'
 import SyntaxHighlighter from 'react-native-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/styles';
 
-import { View, Text, Platform } from '../../../src/base'
+import { View, Text, Platform, ScrollView } from 'kakko/base'
 
 export default class Page extends React.Component {
   render() {
     let code = null
     let info = null
+    const Container = (Platform.OS === 'web') ? View : ScrollView
     if (this.props.code) {
-      code = <SyntaxHighlighter language='javascript' style={atomOneDark} customStyle={{ padding: 20 }}>{this.props.code.trim()}</SyntaxHighlighter>
+      code = <SyntaxHighlighter language='shell' style={atomOneDark} customStyle={{ padding: 20 }}>{this.props.code.trim()}</SyntaxHighlighter>
     }
 
     if (this.props.info) {
       info = <Text style={{ marginBottom: 18 }}>{this.props.info}</Text>
     }
+
     return (
-      <View style={
+      <Container style={
         { 
           padding: (Platform.OS === 'web') ? 40 : 0,
-          paddingTop: 20
+          paddingTop: 20,
+          paddingBottom: 20
         }
       }>
         <Text style={{
@@ -39,7 +42,7 @@ export default class Page extends React.Component {
 
         { info }
         { code }
-      </View>
+      </Container>
     )
   }
 }

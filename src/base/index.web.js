@@ -3,6 +3,7 @@ export { default as Image } from 'react-native-web/dist/components/Image'
 export { default as TextInput } from 'react-native-web/dist/components/TextInput'
 export { default as View } from 'react-native-web/dist/components/View'
 export { default as Text } from 'react-native-web/dist/components/Text'
+export { default as ScrollView } from 'react-native-web/dist/components/ScrollView'
 
 export { default as TouchableWithoutFeedback } from 'react-native-web/dist/components/Touchable/TouchableWithoutFeedback'
 export { default as TouchableHighlight } from 'react-native-web/dist/components/Touchable/TouchableHighlight'
