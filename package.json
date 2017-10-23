@@ -8,7 +8,8 @@
     "storybook:web": "start-storybook -p 9001 -c storybook",
     "storybook:native": "storybook start -p 7007",
     "prestorybook:native": "rnstl --pattern=storybook/stories/**/*.stories.js",
-    "prestorybook:web": "rnstl --pattern=storybook/stories/**/*.stories.js"
+    "prestorybook:web": "rnstl --pattern=storybook/stories/**/*.stories.js",
+    "build": "babel ./src --out-dir ./"
   },
   "dependencies": {
     "react": "^16.0.0",
@@ -20,6 +21,7 @@
     "@storybook/addon-links": "^3.2.13",
     "@storybook/react": "^3.2.13",
     "@storybook/react-native": "^3.2.13",
+    "babel-cli": "^6.26.0",
     "babel-jest": "21.2.0",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-preset-react-native": "4.0.0",
