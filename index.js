@@ -1,4 +1,10 @@
 import { AppRegistry } from 'react-native';
 import App from './App';
+import StorybookUI from './storybook';
 
-AppRegistry.registerComponent('kakko', () => App);
+if(__DEV__) {
+  AppRegistry.registerComponent('kakko', () => StorybookUI);
+} else {
+  AppRegistry.registerComponent('kakko', () => App);
+}
+

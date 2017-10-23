@@ -11,7 +11,6 @@ import {
   Text,
   View
 } from 'react-native';
-import StorybookUI from './storybook';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -20,7 +19,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-class App extends Component<{}> {
+export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
@@ -56,7 +55,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-
-// Condition for storybook
-export default __DEV__ ? StorybookUI : App;
