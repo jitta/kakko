@@ -9,6 +9,7 @@ function loadStories() {
   require('./stories/Base/Styled.stories.js');
   require('./stories/Components/Card.stories.js');
   require('./stories/Components/Divider.stories.js');
+  require('./stories/Typo/Typo.stories.js');
   
 }
 
@@ -17,6 +18,7 @@ const stories = [
   './stories/Base/Styled.stories.js',
   './stories/Components/Card.stories.js',
   './stories/Components/Divider.stories.js',
+  './stories/Typo/Typo.stories.js',
   
 ];
 

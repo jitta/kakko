@@ -27,8 +27,7 @@ if (Platform.OS == 'web') {
 
 NormalCardStyle.defaultProps = {
   border: true,
-  shadow: false,
-  roundedShadow: false
+  shadow: false
 }
 
 export default NormalCardStyle
