@@ -8,6 +8,7 @@ function loadStories() {
   require('./stories/Base/Base.stories.js');
   require('./stories/Base/Styled.stories.js');
   require('./stories/Components/Card.stories.js');
+  require('./stories/Components/Divider.stories.js');
   
 }
 
@@ -15,6 +16,7 @@ const stories = [
   './stories/Base/Base.stories.js',
   './stories/Base/Styled.stories.js',
   './stories/Components/Card.stories.js',
+  './stories/Components/Divider.stories.js',
   
 ];
 

@@ -10,7 +10,7 @@ let NormalCardStyle = styled(View)`
   border-radius: 3px;
   padding: 24px;
   margin: 24px;
-  marginTop: 0;
+  margin-top: 0;
 
   ${'' /* For React Native */}
   shadow-offset: 0px 1px;
