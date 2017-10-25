@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '../../styled'
 import { View, Text, Image, Platform } from '../../base'
-import colors from '../styleguide/colors'
+import colors from '../../styleguide/colors'
 import { Body, Title } from '../../typo'
 import icRight from '../../assets/images/ic_right.png'
 
@@ -27,9 +27,18 @@ const BoxCenterStyled = styled(View)`
   flex: 1;
   justify-content: center;
 `
-const TitleDefault = styled(Body)``
+const TitleStyled = styled(Title)`
+  color: ${colors.BlackPearl};
+  font-weight: bold;
+`
+const SubtitleStyled = styled(Body)`
+  color: ${colors.Bluewood};
+  margin-top: 2px;
+`
 
-const DescriptionStyled = styled(Body)`color: ${colors.BaliHai};`
+const SingleTitleStyled = styled(Body)`
+  color: ${colors.Bluewood};
+`
 
 const ActionIconContainer = styled(View)`
   justify-content: center;
@@ -43,7 +52,7 @@ const ActionIconStyled = styled(Image)`
 
 const BorderStyled = styled(View)`
   height: 1px;
-  background: ${colors.Alabaster};
+  background-color: ${colors.Geyser};
   position: absolute;
   bottom: 0;
   left: 0;
@@ -62,14 +71,14 @@ const ListItem = ({ title, subtitle, image, separator = true }) => {
   if (subtitle) {
     displayText = (
       <BoxCenterStyled>
-        <Title>{title}</Title>
-        <Body>{subtitle}</Body>
+        <TitleStyled>{title}</TitleStyled>
+        <SubtitleStyled>{subtitle}</SubtitleStyled>
       </BoxCenterStyled>
     )
   } else {
     displayText = (
       <BoxCenterStyled>
-        <Body>{title}</Body>
+        <SingleTitleStyled>{title}</SingleTitleStyled>
       </BoxCenterStyled>
     )
   }
