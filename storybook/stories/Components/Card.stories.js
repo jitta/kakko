@@ -16,6 +16,9 @@ const Component = () => (
     <Card shadow> 
       <Text>Card Content</Text>
     </Card>
+    <Card padding={false}> 
+      <Text>Card Content</Text>
+    </Card>
   </View>
 )
 `
@@ -29,6 +32,10 @@ storiesOf('Component', module).add('Card', () => (
 
     <Card shadow> 
       <Text>Card Content</Text>
+    </Card>
+
+    <Card padding={false}> 
+      <Text>No Padding Card</Text>
     </Card>
   </Page>
 ))

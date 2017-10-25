@@ -8,7 +8,7 @@ let NormalCardStyle = styled(View)`
 
   border: ${({ shadow }) => shadow ? '1px solid rgba(0, 0, 0, 0)' : '1px solid #E9EEf5' };
   border-radius: 3px;
-  padding: 24px;
+  padding: ${({ padding }) => padding ? '24px' : '0px'};
   margin: 24px;
   margin-top: 0;
 
@@ -27,7 +27,8 @@ if (Platform.OS == 'web') {
 
 NormalCardStyle.defaultProps = {
   border: true,
-  shadow: false
+  shadow: false,
+  padding: true
 }
 
 export default NormalCardStyle

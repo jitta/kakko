@@ -22,6 +22,13 @@ module.exports = {
             presets: ['react-native']
           }
         }
+      },
+      {
+        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader',
+        include:[
+          path.resolve(__dirname, '../src')
+        ]
       }
     ]
   },
