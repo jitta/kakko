@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Platform } from 'react-native'
+import { View, Platform } from '../../base'
 import styled from '../../styled'
 
 let NormalCardStyle = styled(View)`
