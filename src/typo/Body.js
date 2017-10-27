@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text } from '../base'
 import styled from '../styled'
-import { fontSize } from '../styleguide/fonts'
+import { fontSize } from '../styleguide'
 
 export default styled(Text)`
   font-size: ${fontSize.Body}px;

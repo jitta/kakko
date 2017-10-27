@@ -3,8 +3,7 @@ import styled from '../../styled'
 import { View, Text, Platform } from '../../base'
 // import propTypes from 'prop-types'
 import { Label, Headline } from '../../typo'
-import colors from '../../styleguide/colors'
-import { fontSize } from '../../styleguide/fonts'
+import { colors, fontSize } from '../../styleguide'
 
 const DataItemContainerStyled = styled(View)`
   padding-top: 16px;

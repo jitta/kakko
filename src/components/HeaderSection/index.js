@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '../../styled'
 import { View, Text, Platform } from '../../base'
 import Title from '../../typo/Title'
-import colors from '../../styleguide/colors'
+import { colors } from '../../styleguide'
 
 const HeaderSectionContainerStyled = styled(View)`
   padding-top: 16px;

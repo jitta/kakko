@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '../../styled'
 import { View, Text, Image, Platform } from '../../base'
-import colors from '../../styleguide/colors'
+import { colors } from '../../styleguide'
 import { Body, Title } from '../../typo'
 import icRight from '../../assets/images/ic_right.png'
 
