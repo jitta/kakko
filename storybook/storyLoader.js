@@ -10,7 +10,9 @@ function loadStories() {
   require('./stories/Components/Card.stories.js');
   require('./stories/Components/DataItem.stories.js');
   require('./stories/Components/Divider.stories.js');
+  require('./stories/Components/FloatingLabel.stories.js');
   require('./stories/Components/HeaderSection.stories.js');
+  require('./stories/Components/HorizontalTextInput.stories.js');
   require('./stories/Components/ListItem.stories.js');
   require('./stories/Typo/Typo.stories.js');
   
@@ -22,7 +24,9 @@ const stories = [
   './stories/Components/Card.stories.js',
   './stories/Components/DataItem.stories.js',
   './stories/Components/Divider.stories.js',
+  './stories/Components/FloatingLabel.stories.js',
   './stories/Components/HeaderSection.stories.js',
+  './stories/Components/HorizontalTextInput.stories.js',
   './stories/Components/ListItem.stories.js',
   './stories/Typo/Typo.stories.js',
   

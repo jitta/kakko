@@ -1,33 +1,37 @@
 import React from 'react'
 import { View, Text, TextInput, Animated, Platform } from '../../base'
-import styled from '../../styled'
 import { colors } from '../../styleguide'
+import styled from '../../styled'
+
+const Container = styled(View)`
+  flex-direction: row;
+
+`
 
 // height: 72px;
-const ContainerView = styled(View)`
-  padding-top: 16px;
+const InputContainer = styled(View)`
   flex-direction: column;
   position: relative;
+  flex: 1;
 `
 
 const StyledInput = styled(TextInput)`
   padding: 8px 0;
   border-width: 0px;
   font-size: 16px;
-  
 
   width: 100%;
   color: ${({ editable = true }) =>
     editable ? colors.Bluewood : colors.BaliHai}
-
+  
   ${Platform.OS == 'web' ? 'outline: none;' : ''}
 `
 
-const FloatableLabel = styled(Animated.Text)`
-  position: absolute;
-  left: 0px;
-  margin: 0;
-  backgroundColor: transparent;
+const AnimatableLabel = styled(Animated.Text)`
+  padding-top: 10px;
+  padding-right: 16px;
+  text-align: right;
+  font-size: 12px;
 `
 
 const PlaceholderLabel = styled(Animated.Text)`
@@ -36,7 +40,7 @@ const PlaceholderLabel = styled(Animated.Text)`
   top: 24px;
   backgroundColor: transparent;
   font-size: 16px;
-  color: ${colors.BaliHai}
+  color: ${colors.Bluewood}
 `
 
 const CaptionText = styled(Text)`
@@ -45,10 +49,11 @@ const CaptionText = styled(Text)`
   color: ${colors.BaliHai}
 `
 
-export default class FloatingLabel extends React.Component {
+export default class HorizontalTextInput extends React.Component {
   static defaultProps = {
     editable: true,
-    placeholder: ''
+    placeholder: '',
+    value: ''
   }
 
   constructor(props) {
@@ -80,28 +85,28 @@ export default class FloatingLabel extends React.Component {
   }
 
   _handleNativeOnChangeText = text => {
-    console.log(text)
     this.props.onChangeText && this.props.onChangeText(text)
   }
 
   render() {
     // colors for default and focus state for eacg animatable element
-    let defaultLabelColor =
-      this.props.value === '' ? colors.BaliHai : colors.Bluewood
+    let defaultLabelColor = colors.Bluewood
     let highlightLabelColor = colors.JittaBlue
-
     let captionLabelColor = colors.BaliHai
+    let borderColor = colors.BaliHai
 
     if (this.props.error) {
       defaultLabelColor = colors.Bittersweet
       highlightLabelColor = colors.Bittersweet
       captionLabelColor = colors.Bittersweet
+      borderColor = colors.Bittersweet
     }
 
     if (!this.props.editable) {
       defaultLabelColor = colors.Geyser
-      highlightLabelColor = colors.BaliHai
-      captionLabelColor = colors.BaliHai
+      highlightLabelColor = colors.Geyser
+      captionLabelColor = colors.Geyser
+      borderColor = colors.Geyser
     }
 
     // Position for default and focus state for each label element
@@ -123,17 +128,13 @@ export default class FloatingLabel extends React.Component {
       inputRange: [0, 1],
       outputRange: [defaultLabelColor, highlightLabelColor]
     })
-    const borderColor = this.state.focusAnimation.interpolate({
+    const borderColorAnim = this.state.focusAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: [defaultLabelColor, highlightLabelColor]
+      outputRange: [borderColor, highlightLabelColor]
     })
     const labelPositionTop = this.state.focusAnimation.interpolate({
       inputRange: [0, 1],
       outputRange: [defaultLabelPosition, focusLabelPosition]
-    })
-    const LabelFontSize = this.state.focusAnimation.interpolate({
-      inputRange: [0, 1],
-      outputRange: [defaultLabelSize, focusLabelSize]
     })
 
     // Replace TextInput's props with proxy function handle for animation
@@ -144,36 +145,28 @@ export default class FloatingLabel extends React.Component {
       onBlur: this._handleOnBlur,
       type: this.props.type || 'text',
       underlineColorAndroid: 'transparent',
-      placeholder: '' // we replace input placeholder with placeholder label
+      // placeholder: '' // we replace input placeholder with placeholder label
+      placeholderTextColor: colors.BaliHai
     })
 
     return (
-      <ContainerView>
-        <FloatableLabel
-          style={{
-            top: labelPositionTop,
-            fontSize: LabelFontSize,
-            color: labelColor
-          }}
-        >
-          {this.props.label}
-        </FloatableLabel>
-        <PlaceholderLabel style={{ opacity: placeholderOpacity }}>
-          {this.props.value === '' ? this.props.placeholder : ''}
-        </PlaceholderLabel>
-        <StyledInput {...newProps} />
-        <Animated.View
-          style={{
-            height: 1,
-            backgroundColor: borderColor
-          }}
-        />
-        {this.props.caption
-          ? <CaptionText style={{ color: captionLabelColor }}>
-              {this.props.caption}
-            </CaptionText>
-          : null}
-      </ContainerView>
+      <Container>
+        <AnimatableLabel style={{ width: 100, color: labelColor}}>{ this.props.label }</AnimatableLabel>
+        <InputContainer>
+          <StyledInput {...newProps} />
+          <Animated.View
+            style={{
+              height: 1,
+              backgroundColor: borderColorAnim
+            }}
+          />
+          {this.props.caption
+            ? <CaptionText style={{ color: captionLabelColor }}>
+                {this.props.caption}
+              </CaptionText>
+            : null}
+        </InputContainer>
+      </Container>
     )
   }
 }
